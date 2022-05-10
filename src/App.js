@@ -1,29 +1,47 @@
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 
 function App() {
   return (
     <div className="wrapper">
       <header>
-        <div className="headerLeft">
-          <img width={40} height={40} src="/img/logo.png" />
+        <div className="d-flex align-items-center">
+          <img alt="logo" width={40} height={40} src="/img/logo.png" />
           <div className="headerInfo">
-            <h3 className="name">react sneakers</h3>
+            <h3>react sneakers</h3>
             <p>Магазин лучших кроссовок</p>
           </div>
         </div>
-        <div className="headerInfo">
-          <ul className="headerRight">
-            <li>
-              <svg />
-              <span>1205 руб.</span>
-            </li>
-            <li>
-              <svg />
-            </li>
-          </ul>
-        </div>
+        <ul className="d-flex align-items-center">
+          <li className="d-flex align-items-center">
+            <AiOutlineShoppingCart style={{ height: '20px', width: '20px', color: 'gray' }} />
+            <span>1205 руб.</span>
+          </li>
+          {/* <li>
+            <AiOutlineHeart style={{ height: '20px', width: '20px', color: 'gray' }} />
+          </li> */}
+          <li>
+            < AiOutlineUser style={{ height: '20px', width: '20px', color: 'gray' }} />
+          </li>
+        </ul>
       </header>
       <div className="content">
         <h1>Все кроссовки</h1>
+        <div className="card">
+          <AiOutlineHeart style={{ height: '20px', width: '20px', color: 'gray' }} />
+          <img width={133} height={112} src="/img/cardSN.jpg" alt="sneakers"></img>
+          <h5 className="sneakerName">Мужские кроссовки Nike Blazer Mid Suede</h5>
+          <div className="d-flex justify-content-between align-items-center" >
+            <div className="d-flex flex-column">
+              <span className="sneacerPrice">Цена:</span>
+              <b>12 999 руб.</b>
+            </div>
+            <button className="button"><img width={11} height={11} src="/img/plus.svg" alt="plus"></img></button>
+          </div>
+
+        </div>
       </div>
     </div>
   );
