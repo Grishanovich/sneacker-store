@@ -4,13 +4,28 @@ import Drawer from "./components/Drawer";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineSearch } from "react-icons/ai";
 
-
 function App() {
+
+  function data() {
+
+    const arr = [
+      { img: "/img/image1.jpg", name: "Мужские Кроссовки Nike Blazer Mid Suede", price: "12999" },
+      { img: "/img/image2.jpg", name: "Мужские Кроссовки Nike Air Max 270", price: "10999" },
+      { img: "/img/image3.jpg", name: "Мужские Кроссовки Nike Blazer Mid Suede", price: "8499" },
+      { img: "/img/image4.jpg", name: "Кроссовки Puma X Aka Boku Future Rider", price: "8999" },
+    ]
+
+    const card = arr.map((item, i) => {
+      return (<Card key={i} name={item.name} price={item.price} img={item.img} />)
+    })
+    return card
+  }
+
   return (
+
     <div className="wrapper">
       <Header />
       <Drawer />
-
       <div className="content p-5">
         <div className="d-flex justify-content-between align-items-center mb-5">
           <h1>Все кроссовки</h1>
@@ -21,49 +36,9 @@ function App() {
         </div>
 
         <div className="d-flex justify-content-between">
-
-          <Card />
-
-          <div className="card">
-            <AiOutlineHeart style={{ height: '20px', width: '20px', color: 'gray' }} />
-            <img width={133} height={112} src="/img/image2.jpg" alt="sneakers"></img>
-            <h5 className="sneakerName">Мужские кроссовки<br /> Nike Blazer Mid Suede</h5>
-            <div className="d-flex justify-content-between align-items-center" >
-              <div className="d-flex flex-column">
-                <span className="sneacerPrice">Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button"><img width={11} height={11} src="/img/plus.svg" alt="plus"></img></button>
-            </div>
-          </div>
-
-          <div className="card">
-            <AiOutlineHeart style={{ height: '20px', width: '20px', color: 'gray' }} />
-            <img width={133} height={112} src="/img/image3.jpg" alt="sneakers"></img>
-            <h5 className="sneakerName">Мужские кроссовки<br /> Nike Blazer Mid Suede</h5>
-            <div className="d-flex justify-content-between align-items-center" >
-              <div className="d-flex flex-column">
-                <span className="sneacerPrice">Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button"><img width={11} height={11} src="/img/plus.svg" alt="plus"></img></button>
-            </div>
-          </div>
-
-          <div className="card">
-            <AiOutlineHeart style={{ height: '20px', width: '20px', color: 'gray' }} />
-            <img width={133} height={112} src="/img/image4.jpg" alt="sneakers"></img>
-            <h5 className="sneakerName">Мужские кроссовки<br /> Nike Blazer Mid Suede</h5>
-            <div className="d-flex justify-content-between align-items-center" >
-              <div className="d-flex flex-column">
-                <span className="sneacerPrice">Цена:</span>
-                <b>12 999 руб.</b>
-              </div>
-              <button className="button"><img width={11} height={11} src="/img/plus.svg" alt="plus"></img></button>
-            </div>
-          </div>
-
+          {data()}
         </div>
+
       </div>
     </div>
   );
